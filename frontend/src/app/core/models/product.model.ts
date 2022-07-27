@@ -9,5 +9,6 @@ export interface Product {
     name : string,
     user : User,
     likes : number,
+    description? : string,
     price? : number
 }

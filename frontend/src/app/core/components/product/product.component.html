@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product" [routerLink]="['/product', product?.id]">
     <div class="product__details">
         <b class="product__price">{{ product?.price | currency : "USD" }}</b>
         <h1 class="product__name">{{ product?.name }}</h1>
