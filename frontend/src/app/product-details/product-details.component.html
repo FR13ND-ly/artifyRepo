@@ -15,7 +15,7 @@
                 <mat-icon class="product__likes-icon">favorite</mat-icon>
                 <span class="product__likes-count">{{ product.likes }}</span>
             </div>
-            <div class="product__shop-button button mat-elevation-z2">
+            <div class="product__shop-button button mat-elevation-z2" *ngIf="product.price">
                 <mat-icon>shopping_cart</mat-icon>
             </div>
         </div>

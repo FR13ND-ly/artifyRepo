@@ -4,6 +4,7 @@
     position: relative;
     width: 100%;
     gap: .5rem;
+    cursor: pointer;
     &__details {
         display: flex;
         flex-direction: column;
@@ -38,26 +39,6 @@
     }
     &__user-username {
         white-space: nowrap;
-    }
-    &__like-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        gap: .2rem;
-        font-size: 3rem;
-        opacity: .5;
-        transform: translateX(-50%) translateY(-70%);
-        transition: .2s;
-        cursor: pointer;
-        &:hover {
-            opacity: .8;
-        }
-        &:active {
-            opacity: 1;
-        }
     }
     &__likes {
         user-select: none;

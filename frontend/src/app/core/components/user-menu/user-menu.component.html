@@ -1,0 +1,8 @@
+<div class="user" *ngIf="user$ | async as user" (click) = "$event.stopPropagation()">
+    <img class="user__image" [src]="user.imageUrl">
+    <h2 class="user__username">{{ user.username }}</h2>
+    <div class="actions">
+        <button class="user__button" color="primary" mat-stroked-button>Saved</button>
+        <button class="user__button" color="primary" mat-stroked-button>+ Product</button>
+    </div>
+</div>

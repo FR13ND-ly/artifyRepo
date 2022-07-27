@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './core/components/header/header.component';
 import { MaterialModule } from './core/modules/material.module';
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
+import { UserMenuComponent } from './core/components/user-menu/user-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LandingPageComponent,
+    UserMenuComponent,
   ],
   imports: [
     BrowserModule,
