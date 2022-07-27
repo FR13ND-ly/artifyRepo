@@ -11,10 +11,6 @@
         overflow: hidden;
         object-fit: cover;
         border: 3px solid var(--primary-color);
-        cursor: pointer;
-        &:hover {
-            filter: brightness(.7);
-        }
     }
     &__actions {
         display: flex;

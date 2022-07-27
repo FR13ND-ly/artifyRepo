@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './core/components/header/header.component';
 import { MaterialModule } from './core/modules/material.module';
-import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UserMenuComponent } from './core/components/user-menu/user-menu.component';
 import { EditorComponent } from './editor/editor.component';
 
@@ -16,7 +16,7 @@ import { EditorComponent } from './editor/editor.component';
     HeaderComponent,
     LandingPageComponent,
     UserMenuComponent,
-    EditorComponent
+    EditorComponent,
   ],
   imports: [
     BrowserModule,

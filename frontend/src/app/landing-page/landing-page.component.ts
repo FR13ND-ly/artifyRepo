@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, interval, repeatWhen, Subject, Subscription, takeUntil } from 'rxjs';
-import { Slide } from '../../models/slide.model';
+import { Slide } from '../core/models/slide.model';
 
 @Component({
   selector: 'app-landing-page',

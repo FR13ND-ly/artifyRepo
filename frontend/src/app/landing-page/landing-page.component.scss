@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+:host {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    font-family: 'Righteous', cursive;
+    font-size: 7rem;
+    font-weight: bold;
+    line-height: normal;
+    color: var(--primary-color);
+    mix-blend-mode: difference;
+}
+
+.description {
+    font-weight: lighter;
+    font-size: 1.2rem;
+    line-height: 160%;
+    width: 65%;
+}
+
+.image {
+    position: absolute;
+    width: 800px;
+    height: auto;
+    right: -200px;
+    z-index: -1;
+}

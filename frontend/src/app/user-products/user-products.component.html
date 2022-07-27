@@ -1,0 +1,4 @@
+<h1>My Products</h1>
+<div class="products" *ngIf="products$ | async as products">
+    <app-product [product]="product" *ngFor="let product of products"></app-product>
+</div>

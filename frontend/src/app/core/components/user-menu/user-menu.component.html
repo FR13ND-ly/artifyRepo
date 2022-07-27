@@ -2,8 +2,8 @@
     <img class="user__image" [src]="user.imageUrl">
     <h2 class="user__username">{{ user.username }}</h2>
     <div class="user__actions">
-        <button mat-icon-button matTooltip="my products"><mat-icon>person_filled</mat-icon></button>
-        <button mat-icon-button matTooltip="saved"><mat-icon>star</mat-icon></button>
+        <button mat-icon-button routerLink="my-products" matTooltip="my products"><mat-icon>person_filled</mat-icon></button>
+        <button mat-icon-button routerLink="saved" matTooltip="saved"><mat-icon>star</mat-icon></button>
         <button mat-icon-button (click)="onAddProduct()" matTooltip="add product"><mat-icon>add</mat-icon></button>
     </div>
 </div>
