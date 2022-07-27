@@ -1,0 +1,11 @@
+<header class="mat-elevation-z6" #header>
+    <div>
+        <button color="primary" aria-label="user menu" class="open-menu-sidenav" mat-icon-button><mat-icon>account_circle</mat-icon></button>
+        <button color="primary" aria-label="change theme" class="change-theme-button hide-on-mob" mat-icon-button (click)="onChangeTheme()"><mat-icon>brightness_4</mat-icon></button>
+    </div>
+    <span class="title" routerLink="/">Artify</span>
+    <div class="actions">
+        <div routerLink="explore" routerLinkActive="action--activated" class="action mat-elevation-z2">explore</div>
+        <div routerLink="products" routerLinkActive="action--activated" class="action mat-elevation-z2">products</div>
+    </div>
+</header>

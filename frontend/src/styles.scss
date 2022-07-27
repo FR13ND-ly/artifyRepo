@@ -1,0 +1,62 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$frontend-primary: mat.define-palette(mat.$orange-palette);
+$frontend-accent: mat.define-palette(mat.$teal-palette);
+
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $frontend-primary,
+      accent: $frontend-accent,
+    ),
+  )
+);
+
+@include mat.all-component-themes($light-theme);
+
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $frontend-primary,
+      accent: $frontend-accent,
+    ),
+  )
+);
+
+:root {
+  --background-color-1: #eee;
+  --background-color-2: #fff;
+  --primary-color: #ff9800;
+  --primary-color-secondary: #0d47a1;
+  --accent-color: teal;
+  --text-color: #212121;
+  --placeholder-color: #8e8e8e;
+  --red-color: #f44336;
+  --loading-color: hsl(0, 0%, 80%);
+  --loading-color-secondary: hsl(0, 0%, 55%);
+  --select-text-color: hsl(210, 79%, 36%);
+  --select-background-color: hsl(210, 79%, 76%);
+}
+
+.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+  --background-color-1: #263238;
+  --background-color-2: #37474f;
+  --text-color: #fff;
+  --placeholder-color: hsl(0, 0%, 70%);
+  --loading-color: hsl(200, 9%, 60%);
+  --loading-color-secondary: hsl(200, 9%, 45%);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--background-color-1);
+  color: var(--text-color);
+  transition: .2s ease-in-out;
+}
