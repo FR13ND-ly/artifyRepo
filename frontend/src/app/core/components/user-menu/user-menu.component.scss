@@ -5,8 +5,8 @@
     box-sizing: border-box;
     align-items: center;
     &__image {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         overflow: hidden;
         object-fit: cover;
@@ -16,13 +16,8 @@
             filter: brightness(.7);
         }
     }
-    .actions {
+    &__actions {
         display: flex;
-        flex-direction: column;
         gap: .5rem;
-        width: 100%;
-    }
-    &__button {
-        width: 100%;
     }
 }

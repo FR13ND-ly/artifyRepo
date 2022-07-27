@@ -60,3 +60,7 @@ body {
   color: var(--text-color);
   transition: .2s ease-in-out;
 }
+
+.mat-menu-panel {
+  overflow: hidden!important;
+}

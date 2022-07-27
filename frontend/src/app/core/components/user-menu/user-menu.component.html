@@ -1,8 +1,9 @@
 <div class="user" *ngIf="user$ | async as user" (click) = "$event.stopPropagation()">
     <img class="user__image" [src]="user.imageUrl">
     <h2 class="user__username">{{ user.username }}</h2>
-    <div class="actions">
-        <button class="user__button" color="primary" mat-stroked-button>Saved</button>
-        <button class="user__button" (click)="onAddProduct()" color="primary" mat-stroked-button>+ Product</button>
+    <div class="user__actions">
+        <button mat-icon-button matTooltip="my products"><mat-icon>person_filled</mat-icon></button>
+        <button mat-icon-button matTooltip="saved"><mat-icon>star</mat-icon></button>
+        <button mat-icon-button (click)="onAddProduct()" matTooltip="add product"><mat-icon>add</mat-icon></button>
     </div>
 </div>
