@@ -9,6 +9,7 @@ import { MaterialModule } from './core/modules/material.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UserMenuComponent } from './core/components/user-menu/user-menu.component';
 import { EditorComponent } from './editor/editor.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { EditorComponent } from './editor/editor.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
