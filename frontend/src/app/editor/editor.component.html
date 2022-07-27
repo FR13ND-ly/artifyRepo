@@ -1,0 +1,19 @@
+<div class="product">
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <div class="product__actions">
+        <input type="file" style="display: none;" #fileInput>
+        <button color="accent" mat-raised-button (click)="fileInput.click()">Upload File*</button>
+        <button color="primary" mat-raised-button >Add</button>
+    </div>
+</div>

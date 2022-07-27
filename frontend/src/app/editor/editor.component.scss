@@ -1,0 +1,15 @@
+
+.product {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+textarea {
+    height: 4rem;
+}

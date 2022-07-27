@@ -8,6 +8,7 @@ import { HeaderComponent } from './core/components/header/header.component';
 import { MaterialModule } from './core/modules/material.module';
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
 import { UserMenuComponent } from './core/components/user-menu/user-menu.component';
+import { EditorComponent } from './editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UserMenuComponent } from './core/components/user-menu/user-menu.compone
     HeaderComponent,
     LandingPageComponent,
     UserMenuComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,6 @@
     <h2 class="user__username">{{ user.username }}</h2>
     <div class="actions">
         <button class="user__button" color="primary" mat-stroked-button>Saved</button>
-        <button class="user__button" color="primary" mat-stroked-button>+ Product</button>
+        <button class="user__button" (click)="onAddProduct()" color="primary" mat-stroked-button>+ Product</button>
     </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
+import { EditorComponent } from 'src/app/editor/editor.component';
 
 @Component({
   selector: 'app-user-menu',
@@ -8,7 +10,7 @@ import { Observable, of } from 'rxjs';
 })
 export class UserMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   user$ : Observable<any> = of({
     username : 'George Lucas',
@@ -18,4 +20,7 @@ export class UserMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAddProduct() {
+    this.dialog.open(EditorComponent)
+  }
 }
