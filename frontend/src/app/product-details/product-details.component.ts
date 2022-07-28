@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Product } from '../core/models/product.model';
+import { ActivatedRoute } from '@angular/router';
+import { Observable, switchMap, tap } from 'rxjs';
+import { AuthService } from '../core/data-access/auth.service';
+import { LikesService } from '../core/data-access/likes.service';
+import { ProductsService } from '../core/data-access/products.service';
 
 @Component({
   selector: 'app-product-details',
@@ -9,20 +12,54 @@ import { Product } from '../core/models/product.model';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor() { }
-  product$ : Observable<Product> = of({
-    id : 0,
-    imageUrl : 'https://static01.nyt.com/images/2021/03/12/arts/11nft-auction-cryptopunks-print/11nft-auction-cryptopunks-print-mobileMasterAt3x.jpg',
-    name : 'monkey',
-    user : {
-      username : 'George Lucas',
-      imageUrl : 'https://www.forbes.com/advisor/in/wp-content/uploads/2022/03/monkey-g412399084_1280.jpg',
-    },
-    likes : 5,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    price : 5
-  },)
+  constructor(private productService : ProductsService, private route : ActivatedRoute, private authService : AuthService, private likesService : LikesService) { }
+
+  product$ : Observable<any> = this.route.params.pipe(
+    switchMap((res : any) => this.productService.getProduct(res['id']))
+  )
+  id! : number
+  user! : string
+
+  likes$ : Observable<any> = this.route.params.pipe(
+    tap((res : any) => this.id = res['id']),
+    switchMap((res : any) => this.authService.getUserUpdateListener().pipe(
+      tap((user : any) => this.user = user.token),
+        switchMap((user) => this.likesService.getLikes({
+          product : res['id'],
+          user : user.token
+        })
+      )
+    ))
+  )
+
+  savedState$ : Observable<any> = this.route.params.pipe(
+    switchMap((res : any) => this.authService.getUserUpdateListener().pipe(
+      switchMap((user) => this.productService.getSavedState({
+        product : res['id'],
+        user : user.token
+      })
+    )
+    ))
+  )
+
   ngOnInit(): void {
+  }
+
+  onSave(vm : any) {
+    vm.savedState = !vm.savedState
+    this.productService.save({
+      product : this.id,
+      user : this.user
+    }).subscribe()
+  }
+
+  onLike(likesInfo : any) {
+    likesInfo.liked = likesInfo.liked == 'favorite' ? 'favorite_border' : 'favorite'
+    likesInfo.likes += likesInfo.liked == 'favorite' ? 1 : -1
+    this.likesService.like({
+      product : this.id,
+      user : this.user
+    }).subscribe()
   }
 
 }

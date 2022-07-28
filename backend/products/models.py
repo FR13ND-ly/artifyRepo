@@ -5,8 +5,10 @@ class Product(models.Model):
     user = models.TextField()
     name = models.TextField()
     description = models.TextField()
-    price = models.TextField()
+    date = models.DateTimeField(default=timezone.now())
     image = models.PositiveIntegerField()
+    ntfied = models.BooleanField(default=False)
+
 
 class SavedProduct(models.Model):
     product = models.PositiveIntegerField()

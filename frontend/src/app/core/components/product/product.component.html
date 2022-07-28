@@ -1,6 +1,5 @@
 <div class="product" [routerLink]="['/product', product.id]">
     <div class="product__details">
-        <b class="product__price">{{ product.price | currency : "USD" }}</b>
         <h1 class="product__name">{{ product.name }}</h1>
         <div class="product__likes">
             <mat-icon color="warn" class="product__likes-icon">favorite</mat-icon>
@@ -8,7 +7,7 @@
         </div>
     </div>
     <img class="product__image mat-elevation-z4" [src]="product.imageUrl">
-    <div class="product__user">
+    <div class="product__user" *ngIf="!hideAuthor">
         <img class="product__user-image" [src]="product.user!.imageUrl">
         <b class="product__user-username">{{ product.user!.username }}</b>
     </div>

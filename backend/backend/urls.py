@@ -5,7 +5,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('likes/', include('likes.urls')),
-    path('user/', include('profiles.urls')),
+    path('profiles/', include('profiles.urls')),
     path('files/', include('files.urls')),
     path('products/', include('products.urls')),
     path('admin/', admin.site.urls),

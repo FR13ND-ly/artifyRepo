@@ -63,4 +63,9 @@ body {
 
 .mat-menu-panel {
   overflow: hidden!important;
+  background-color: var(--background-color-2)!important;
+}
+
+.mat-dialog-container {
+  background-color: var(--background-color-2)!important;
 }

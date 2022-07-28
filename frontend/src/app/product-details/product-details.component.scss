@@ -57,7 +57,7 @@
         gap: .2rem;
         font-weight: bold;
         background-color: var(--red-color);
-        width: 90%;
+        width: 100%;
     }
     &__likes-count {
         font-size: 1.2rem;
@@ -69,12 +69,7 @@
     }
 
     &__save-button {
-        width: 10%;
         background-color: var(--primary-color);
-    }
-    &__shop-button {
-        width: 90%;
-        background-color: var(--accent-color);
     }
 }
 

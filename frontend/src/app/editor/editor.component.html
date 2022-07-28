@@ -1,19 +1,15 @@
-<div class="product">
+<div class="product" *ngIf="user$ | async as user">
     <mat-form-field appearance="fill">
         <mat-label>Title</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="product.name">
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>Description</mat-label>
-        <textarea matInput></textarea>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Price</mat-label>
-        <input matInput>
+        <textarea matInput [(ngModel)]="product.description"></textarea>
     </mat-form-field>
     <div class="product__actions">
-        <input type="file" style="display: none;" #fileInput>
+        <input (input)="onAddFile($event)" type="file" style="display: none;" #fileInput>
         <button color="accent" mat-raised-button (click)="fileInput.click()">Upload File*</button>
-        <button color="primary" mat-raised-button mat-dialog-close>Add</button>
+        <button [disabled]="!product.imageId" (click)="onAddProduct(user.token)" color="primary" mat-dialog-close mat-raised-button>Add</button>
     </div>
 </div>

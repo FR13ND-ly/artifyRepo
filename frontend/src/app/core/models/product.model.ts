@@ -5,10 +5,12 @@ export interface User {
 
 export interface Product {
     id : number,
-    imageUrl : string,
+    imageId? : number,
+    imageUrl? : string,
     name : string,
-    user : User,
-    likes : number,
+    user? : User,
+    token? : string,
+    likes? : number,
     description? : string,
-    price? : number
+    saved? : boolean,
 }

@@ -1,6 +1,6 @@
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { filter } from 'rxjs';
+import { filter, tap } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -9,20 +9,12 @@ import { filter } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private scrollDispatcher: ScrollDispatcher) { }
+  constructor() { }
 
   @ViewChild('header') headerRef!: ElementRef<HTMLElement>;
 
   ngOnInit(): void {
     this.onSetTheme();
-    this.scrollDispatcher.scrolled()
-    .subscribe((cdk: any) => {
-      if (!cdk) return
-      this.headerRef?.nativeElement.classList.toggle(
-        'sticked',
-        cdk.getElementRef().nativeElement.scrollTop > 30
-      );
-    });
   }
 
   onChangeTheme() {

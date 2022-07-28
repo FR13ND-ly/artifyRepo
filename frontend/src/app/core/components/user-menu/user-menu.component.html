@@ -1,9 +1,14 @@
-<div class="user" *ngIf="user$ | async as user" (click) = "$event.stopPropagation()">
+<div class="user" *ngIf="user$ | async as user else unAuth" (click) = "$event.stopPropagation()">
     <img class="user__image" [src]="user.imageUrl">
-    <h2 class="user__username">{{ user.username }}</h2>
+    <h2 contenteditable (input)="onChangeUsername(username.innerText, user.token)" class="user__username" #username>{{ user.username }}</h2>
     <div class="user__actions">
         <button mat-icon-button routerLink="my-products" matTooltip="my products"><mat-icon>person_filled</mat-icon></button>
-        <button mat-icon-button routerLink="saved" matTooltip="saved"><mat-icon>star</mat-icon></button>
+        <button mat-icon-button routerLink="saved" matTooltip="bookmarks"><mat-icon>star</mat-icon></button>
         <button mat-icon-button (click)="onAddProduct()" matTooltip="add product"><mat-icon>add</mat-icon></button>
     </div>
 </div>
+<ng-template #unAuth>
+    <h3>
+        You need <br>MetaMask Extension
+    </h3>
+</ng-template>
